@@ -1,0 +1,13 @@
+Build.PL
+Changes
+lib/WWW/Google/DataTypes.pm
+lib/WWW/Google/Exception.pm
+lib/WWW/Google/UserAgent.pm
+Makefile.PL
+MANIFEST
+SIGNATURE
+MANIFEST.SKIP
+README
+t/00-load.t
+t/manifest.t
+t/pod.t
