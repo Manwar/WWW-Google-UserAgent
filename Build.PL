@@ -5,7 +5,7 @@ use Module::Build;
 
 my $builder = Module::Build->new(
     module_name         => 'WWW::Google::UserAgent',
-    license             => 'Artistic_2_0',
+    license             => 'artistic_2',
     dist_author         => q{Mohammad S Anwar <mohammad.anwar@yahoo.com>},
     dist_version_from   => 'lib/WWW/Google/UserAgent.pm',
     release_status      => 'stable',

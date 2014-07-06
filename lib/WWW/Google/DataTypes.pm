@@ -3,25 +3,96 @@ package WWW::Google::DataTypes;
 $WWW::Google::DataTypes::VERSION = '0.01';
 
 use 5.006;
+use parent 'Exporter';
+use strict; use warnings;
+
+our @EXPORT_OK = qw(
+    $Boolean
+    $Output
+    $Language
+);
 
 =head1 NAME
 
-WWW::Google::DataTypes -
+WWW::Google::DataTypes - Used by the core library WWW::Google::UserAgent
 
 =head1 VERSION
 
 Version 0.01
 
-=head1 SYNOPSIS
-
-=head1 METHODS
-
-=head2 function1
-
 =cut
 
-sub function1 {
-}
+my $LANGUAGES = {
+    'ar'    => 1,
+    'eu'    => 1,
+    'bg'    => 1,
+    'bn'    => 1,
+    'ca'    => 1,
+    'cs'    => 1,
+    'da'    => 1,
+    'de'    => 1,
+    'el'    => 1,
+    'en'    => 1,
+    'en-au' => 1,
+    'en-gb' => 1,
+    'es'    => 1,
+    'eu'    => 1,
+    'fa'    => 1,
+    'fi'    => 1,
+    'fi'    => 1,
+    'fr'    => 1,
+    'gl'    => 1,
+    'gu'    => 1,
+    'hi'    => 1,
+    'hr'    => 1,
+    'hu'    => 1,
+    'id'    => 1,
+    'it'    => 1,
+    'iw'    => 1,
+    'ja'    => 1,
+    'kn'    => 1,
+    'ko'    => 1,
+    'lt'    => 1,
+    'lv'    => 1,
+    'ml'    => 1,
+    'mr'    => 1,
+    'nl'    => 1,
+    'no'    => 1,
+    'pl'    => 1,
+    'pt'    => 1,
+    'pt-br' => 1,
+    'pt-pt' => 1,
+    'ro'    => 1,
+    'ru'    => 1,
+    'sk'    => 1,
+    'sl'    => 1,
+    'sr'    => 1,
+    'sv'    => 1,
+    'tl'    => 1,
+    'ta'    => 1,
+    'te'    => 1,
+    'th'    => 1,
+    'tr'    => 1,
+    'uk'    => 1,
+    'vi'    => 1,
+    'zh-cn' => 1,
+    'zh-tw' => 1,
+};
+
+our $Boolean = sub {
+    die "ERROR: Invalid boolean type data found [$_]"
+	unless (!defined($_) || ($_ =~ m(^\btrue\b|\bfalse\b$)i))
+};
+
+our $Output = sub {
+    die "ERROR: Invalid output type data found [$_]"
+	unless (!defined($_) || ($_ =~ m(^\bjson\b|\bxml\b$)i))
+};
+
+our $Language = sub {
+    die "ERROR: Invalid language type data found [$_]"
+	unless (!defined($_) || exists($LANGUAGES->{lc($_)}))
+};
 
 =head1 AUTHOR
 

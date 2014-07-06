@@ -3,6 +3,38 @@ package WWW::Google::UserAgent;
 $WWW::Google::UserAgent::VERSION = '0.01';
 
 use 5.006;
+use Data::Dumper;
+
+use HTTP::Tiny;
+use WWW::Google::Exception;
+
+use Moo;
+use namespace::clean;
+
+has 'api_key' => ( is => 'ro', required => 1 );
+has 'ua'      => ( is => 'rw', default => sub { HTTP::Tiny->new(agent => "WWW-Google/0.01"); } );
+
+sub _get {
+    my ($self, $url) = @_;
+
+    my $ua = $self->ua;
+    my $response = $ua->request('GET', $url);
+
+    my @caller = caller(1);
+    @caller = caller(2) if $caller[3] eq '(eval)';
+
+    unless ($response->{success}) {
+	WWW::Google::Exception->throw({
+            method      => $caller[3],
+            message     => "request to API failed",
+            code        => $response->{status},
+            reason      => $response->{reason},
+            filename    => $caller[1],
+            line_number => $caller[2] });
+    }
+
+    return $response;
+}
 
 =head1 NAME
 

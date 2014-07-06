@@ -3,6 +3,15 @@ package WWW::Google::Exception;
 $WWW::Google::Exception::VERSION = '0.01';
 
 use 5.006;
+use Moo;
+with 'Throwable';
+
+has message     => (is => 'ro');
+has method      => (is => 'ro');
+has code        => (is => 'ro');
+has reason      => (is => 'ro');
+has filename    => (is => 'ro');
+has line_number => (is => 'ro');
 
 =head1 NAME
 
@@ -12,15 +21,15 @@ WWW::Google::Exception -
 
 Version 0.01
 
-=head1 DESCRIPTION
-
-=head1 METHODS
-
-=head2 function1
-
 =cut
 
-sub function1 {
+sub as_string
+{
+    my $self = shift;
+    return $self->method.'(): '
+           .$self->message.' ('.$self->code.' '.$self->reason.') '
+           .'file '.$self->filename.' on line '.$self->line_number."\n";
+    ;
 }
 
 =head1 AUTHOR
