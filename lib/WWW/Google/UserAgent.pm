@@ -11,8 +11,26 @@ use WWW::Google::Exception;
 use Moo;
 use namespace::clean;
 
+=head1 NAME
+
+WWW::Google::UserAgent -
+
+=head1 VERSION
+
+Version 0.01
+
+=head1 DESCRIPTION
+
+=cut
+
 has 'api_key' => ( is => 'ro', required => 1 );
 has 'ua'      => ( is => 'rw', default => sub { HTTP::Tiny->new(agent => "WWW-Google/0.01"); } );
+
+=head1 METHODS
+
+=head2 get()
+
+=cut
 
 sub _get {
     my ($self, $url) = @_;
@@ -35,22 +53,6 @@ sub _get {
 
     return $response;
 }
-
-=head1 NAME
-
-WWW::Google::UserAgent -
-
-=head1 VERSION
-
-Version 0.01
-
-=head1 DESCRIPTION
-
-=head1 METHODS
-
-=head2 function1
-
-=cut
 
 =head1 AUTHOR
 

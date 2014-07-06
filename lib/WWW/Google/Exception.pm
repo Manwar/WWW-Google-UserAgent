@@ -6,6 +6,8 @@ use 5.006;
 use Moo;
 with 'Throwable';
 
+use overload q{""} => 'as_string', fallback => 1;
+
 has message     => (is => 'ro');
 has method      => (is => 'ro');
 has code        => (is => 'ro');
