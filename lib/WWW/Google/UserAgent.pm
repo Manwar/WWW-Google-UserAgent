@@ -54,6 +54,32 @@ sub _get {
     return $response;
 }
 
+=head2 post()
+
+=cut
+
+sub _post {
+    my ($self, $url, $headers, $content) = @_;
+
+    my $ua = $self->ua;
+    my $response = $ua->request('POST', $url, { headers => $headers, content => $content });
+
+    my @caller = caller(1);
+    @caller = caller(2) if $caller[3] eq '(eval)';
+
+    if (not $response->{success}) {
+        WWW::Google::Exception->throw({
+            method      => $caller[3],
+            message     => "request to API failed",
+            code        => $response->{status},
+            reason      => $response->{reason},
+            filename    => $caller[1],
+            line_number => $caller[2] });
+    }
+
+    return $response;
+}
+
 =head1 AUTHOR
 
 Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
