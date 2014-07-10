@@ -9,15 +9,17 @@ my $builder = Module::Build->new(
     dist_author         => q{Mohammad S Anwar <mohammad.anwar@yahoo.com>},
     dist_version_from   => 'lib/WWW/Google/UserAgent.pm',
     release_status      => 'stable',
-    configure_requires => {
+    configure_requires  => {
         'Module::Build' => 0,
     },
     build_requires => {
         'Test::More' => 0,
     },
     requires => {
-        #'ABC'              => 1.6,
-        #'Foo::Bar::Module' => 5.0401,
+        'HTTP::Tiny'       => 0,
+        'Moo'              => 0,
+        'throwable'        => 0,
+        'namespace::clean' => 0,
     },
     add_to_cleanup     => [ 'WWW-Google-UserAgent-*' ],
     create_makefile_pl => 'traditional',
