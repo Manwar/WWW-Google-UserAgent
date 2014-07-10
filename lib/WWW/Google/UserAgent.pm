@@ -67,7 +67,7 @@ sub _post {
     my @caller = caller(1);
     @caller = caller(2) if $caller[3] eq '(eval)';
 
-    if (not $response->{success}) {
+    unless ($response->{success}) {
         WWW::Google::Exception->throw({
             method      => $caller[3],
             message     => "request to API failed",

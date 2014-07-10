@@ -4,6 +4,7 @@ $WWW::Google::Exception::VERSION = '0.01';
 
 use 5.006;
 use Moo;
+use namespace::clean;
 with 'Throwable';
 
 use overload q{""} => 'as_string', fallback => 1;
@@ -17,7 +18,7 @@ has line_number => (is => 'ro');
 
 =head1 NAME
 
-WWW::Google::Exception -
+WWW::Google::Exception - Interface to Exception class used by WWW::Google::UserAgent.
 
 =head1 VERSION
 
@@ -25,13 +26,12 @@ Version 0.01
 
 =cut
 
-sub as_string
-{
-    my $self = shift;
-    return $self->method.'(): '
-           .$self->message.' ('.$self->code.' '.$self->reason.') '
-           .'file '.$self->filename.' on line '.$self->line_number."\n";
-    ;
+sub as_string {
+    my ($self) = @_;
+
+    return sprintf("%s(): %s (status: %s) file %s on line %d\n",
+                   $self->method, $self->message,  $self->status,
+                   $self->filename, $self->line_number);
 }
 
 =head1 AUTHOR
