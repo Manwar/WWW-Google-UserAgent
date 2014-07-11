@@ -13,13 +13,11 @@ use namespace::clean;
 
 =head1 NAME
 
-WWW::Google::UserAgent -
+WWW::Google::UserAgent - Core library for Google API services.
 
 =head1 VERSION
 
 Version 0.01
-
-=head1 DESCRIPTION
 
 =cut
 

@@ -80,18 +80,24 @@ my $LANGUAGES = {
 };
 
 our $Boolean = sub {
-    die "ERROR: Invalid boolean type data found [$_]"
-	unless (!defined($_) || ($_ =~ m(^\btrue\b|\bfalse\b$)i))
+    my ($str) = @_;
+
+    die "ERROR: Invalid boolean type data found [$str]"
+	unless (!defined($str) || ($str =~ m(^\btrue\b|\bfalse\b$)i))
 };
 
 our $Output = sub {
-    die "ERROR: Invalid output type data found [$_]"
-	unless (!defined($_) || ($_ =~ m(^\bjson\b|\bxml\b$)i))
+    my ($str) = @_;
+
+    die "ERROR: Invalid output type data found [$str]"
+	unless (!defined($str) || ($str =~ m(^\bjson\b|\bxml\b$)i))
 };
 
 our $Language = sub {
-    die "ERROR: Invalid language type data found [$_]"
-	unless (!defined($_) || exists($LANGUAGES->{lc($_)}))
+    my ($str) = @_;
+
+    die "ERROR: Invalid language type data found [$str]"
+	unless (!defined($str) || exists($LANGUAGES->{lc($str)}))
 };
 
 =head1 AUTHOR

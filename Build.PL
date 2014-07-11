@@ -18,7 +18,7 @@ my $builder = Module::Build->new(
     requires => {
         'HTTP::Tiny'       => 0,
         'Moo'              => 0,
-        'throwable'        => 0,
+        'Throwable'        => 0,
         'namespace::clean' => 0,
     },
     add_to_cleanup     => [ 'WWW-Google-UserAgent-*' ],
