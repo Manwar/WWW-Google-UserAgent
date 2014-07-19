@@ -1,6 +1,6 @@
 package WWW::Google::Exception;
 
-$WWW::Google::Exception::VERSION = '0.01';
+$WWW::Google::Exception::VERSION = '0.02';
 
 use 5.006;
 use Moo;
@@ -22,7 +22,7 @@ WWW::Google::Exception - Interface to Exception class used by WWW::Google::UserA
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
