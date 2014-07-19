@@ -7,9 +7,9 @@ use parent 'Exporter';
 use strict; use warnings;
 
 our @EXPORT_OK = qw(
-    $Boolean
-    $Output
-    $Language
+    $ZeroOrOne
+    $TrueOrFalse
+    $XmlOrJson
 );
 
 =head1 NAME
@@ -22,82 +22,26 @@ Version 0.01
 
 =cut
 
-my $LANGUAGES = {
-    'ar'    => 1,
-    'eu'    => 1,
-    'bg'    => 1,
-    'bn'    => 1,
-    'ca'    => 1,
-    'cs'    => 1,
-    'da'    => 1,
-    'de'    => 1,
-    'el'    => 1,
-    'en'    => 1,
-    'en-au' => 1,
-    'en-gb' => 1,
-    'es'    => 1,
-    'eu'    => 1,
-    'fa'    => 1,
-    'fi'    => 1,
-    'fi'    => 1,
-    'fr'    => 1,
-    'gl'    => 1,
-    'gu'    => 1,
-    'hi'    => 1,
-    'hr'    => 1,
-    'hu'    => 1,
-    'id'    => 1,
-    'it'    => 1,
-    'iw'    => 1,
-    'ja'    => 1,
-    'kn'    => 1,
-    'ko'    => 1,
-    'lt'    => 1,
-    'lv'    => 1,
-    'ml'    => 1,
-    'mr'    => 1,
-    'nl'    => 1,
-    'no'    => 1,
-    'pl'    => 1,
-    'pt'    => 1,
-    'pt-br' => 1,
-    'pt-pt' => 1,
-    'ro'    => 1,
-    'ru'    => 1,
-    'sk'    => 1,
-    'sl'    => 1,
-    'sr'    => 1,
-    'sv'    => 1,
-    'tl'    => 1,
-    'ta'    => 1,
-    'te'    => 1,
-    'th'    => 1,
-    'tr'    => 1,
-    'uk'    => 1,
-    'vi'    => 1,
-    'zh-cn' => 1,
-    'zh-tw' => 1,
-};
 
-our $Boolean = sub {
+our $ZeroOrOne = sub {
     my ($str) = @_;
 
-    die "ERROR: Invalid boolean type data found [$str]"
-	unless (!defined($str) || ($str =~ m(^\btrue\b|\bfalse\b$)i))
+    die "ERROR: Invalid data found [$str]"
+	unless (defined($str) && ($str == 0 || $str == 1));
 };
 
-our $Output = sub {
+our $TrueOrFalse = sub {
     my ($str) = @_;
 
-    die "ERROR: Invalid output type data found [$str]"
-	unless (!defined($str) || ($str =~ m(^\bjson\b|\bxml\b$)i))
+    die "ERROR: Invalid data founOAd [$str]"
+	unless (defined($str) && ($str =~ m(^\btrue\b|\bfalse\b$)i));
 };
 
-our $Language = sub {
+our $XmlOrJson = sub {
     my ($str) = @_;
 
-    die "ERROR: Invalid language type data found [$str]"
-	unless (!defined($str) || exists($LANGUAGES->{lc($str)}))
+    die "ERROR: Invalid data found [$str]"
+	unless (defined($str) || ($str =~ m(^\bjson\b|\bxml\b$)i))
 };
 
 =head1 AUTHOR

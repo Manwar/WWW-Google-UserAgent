@@ -24,13 +24,21 @@ Version 0.01
 has 'api_key' => ( is => 'ro', required => 1 );
 has 'ua'      => ( is => 'rw', default => sub { HTTP::Tiny->new(agent => "WWW-Google/0.01"); } );
 
+=head1 DESCRIPTION
+
+The L<WWW::Google::UserAgent> module is  part of the core library  for Google API
+services.
+
 =head1 METHODS
 
-=head2 get()
+=head2 get(<url>)
+
+The method get() expects one parameter i.e. URL and returns the standard response.
+On error throws exception of type L<WWW::Google::Exception>.
 
 =cut
 
-sub _get {
+sub get {
     my ($self, $url) = @_;
 
     my $ua = $self->ua;
@@ -52,11 +60,14 @@ sub _get {
     return $response;
 }
 
-=head2 post()
+=head2 post(<url>, <headers>, <content>)
+
+The method post() expects three parameters i.e. URL, Headers, Content in the same
+order and returns the standard response. On error throws exception of type L<WWW::Google::Exception>.
 
 =cut
 
-sub _post {
+sub post {
     my ($self, $url, $headers, $content) = @_;
 
     my $ua = $self->ua;
