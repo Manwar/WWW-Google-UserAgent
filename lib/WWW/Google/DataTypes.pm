@@ -33,7 +33,7 @@ our $ZeroOrOne = sub {
 our $TrueOrFalse = sub {
     my ($str) = @_;
 
-    die "ERROR: Invalid data founOAd [$str]"
+    die "ERROR: Invalid data found [$str]"
 	unless (defined($str) && ($str =~ m(^\btrue\b|\bfalse\b$)i));
 };
 
