@@ -1,33 +1,33 @@
 Revision history for WWW-Google-UserAgent
 
-0.10    Thu Aug 28 02:30:00 2014
-        - Added key "META_MERGE" key on condition (ExUtils::MakeMake->VERSION(6.46).
+0.10  Thu Aug 28 02:30:00 2014
+      - Added key "META_MERGE" key on condition (ExUtils::MakeMake->VERSION(6.46).
 
-0.09    Fri Aug 15 00:02:18 2014
-        - Added secction "REPOSITORY" to the pod
-        - Added key "META_MERGE" to Makefile.PL
+0.09  Fri Aug 15 00:02:18 2014
+      - Added section "REPOSITORY" to the pod document.
+      - Added key "META_MERGE" to Makefile.PL file.
 
-0.08    Sat Aug 09 05:18:10 2014
-        - Tidied up README file.
+0.08  Sat Aug 09 05:18:10 2014
+      - Tidied up README file.
 
-0.07    Tue Jul 29 15:00:00 2014
-        - Fixed the unit test t/00-load.t
+0.07  Tue Jul 29 15:00:00 2014
+      - Fixed the unit test t/00-load.t
 
-0.06    Mon Jul 28 23:26:29 2014
-        - Fixed method post() and return the exception object correctly.
+0.06  Mon Jul 28 23:26:29 2014
+      - Fixed method post() and return the exception object correctly.
 
-0.05    Mon Jul 28 17:23:30 2014
-        - Fixed invalid call to method status() in the module WWW::Google::UserAgent::Exception.
+0.05  Mon Jul 28 17:23:30 2014
+      - Fixed invalid call to method status() in the module WWW::Google::UserAgent::Exception.
 
-0.04    Mon Jul 28 14:49:21 2014
-        - Fixed typo in the pod document
+0.04  Mon Jul 28 14:49:21 2014
+      - Fixed typo in the pod document
 
-0.03    Mon Jul 28 14:10:29 2014
-        - Updated WWW::Google::UserAgent to import the package correctly.
+0.03  Mon Jul 28 14:10:29 2014
+      - Updated WWW::Google::UserAgent to import the package correctly.
 
-0.02    Sun Jul 27 11:30:00 2014
-        - Slight re-organized the library.
+0.02  Sun Jul 27 11:30:00 2014
+      - Slight re-organized the library.
 
-0.01    Sat Jul 19 16:31:20 2014
-        First version, released.
+0.01  Sat Jul 19 16:31:20 2014
+      - First version, released.
 
