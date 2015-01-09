@@ -1,5 +1,9 @@
 Revision history for WWW-Google-UserAgent
 
+0.12  Fri Jan 09 16:40:00 2015
+      - Fixed the typo in the package name of WWW::Google::UserAgent::DataTypes and
+        WWW::Google::UserAgent::Exception in the 'provides' list of Makefile.PL file.
+
 0.11  Fri Jan 09 15:12:00 2015
       - Updated Makefile.PL to generate the key 'provides' for META file correctly.
       - Removed SIGNATURE file.

@@ -1,6 +1,6 @@
 package WWW::Google::UserAgent::Exception;
 
-$WWW::Google::UserAgent::Exception::VERSION   = '0.11';
+$WWW::Google::UserAgent::Exception::VERSION   = '0.12';
 $WWW::Google::UserAgent::Exception::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ WWW::Google::UserAgent::Exception - Interface to Exception class used by WWW::Go
 
 =head1 VERSION
 
-Version 0.11
+Version 0.12
 
 =cut
 
