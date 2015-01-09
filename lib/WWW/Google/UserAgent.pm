@@ -1,6 +1,17 @@
 package WWW::Google::UserAgent;
 
-$WWW::Google::UserAgent::VERSION = '0.10';
+$WWW::Google::UserAgent::VERSION   = '0.11';
+$WWW::Google::UserAgent::AUTHORITY = 'cpan:MANWAR';
+
+=head1 NAME
+
+WWW::Google::UserAgent - Core library for Google API services.
+
+=head1 VERSION
+
+Version 0.11
+
+=cut
 
 use 5.006;
 use Data::Dumper;
@@ -10,16 +21,6 @@ use WWW::Google::UserAgent::Exception;
 
 use Moo;
 use namespace::clean;
-
-=head1 NAME
-
-WWW::Google::UserAgent - Core library for Google API services.
-
-=head1 VERSION
-
-Version 0.10
-
-=cut
 
 has 'api_key' => ( is => 'ro', required => 1 );
 has 'ua'      => ( is => 'rw', default => sub { HTTP::Tiny->new(agent => "WWW-Google/0.01"); } );
@@ -134,7 +135,7 @@ L<http://search.cpan.org/dist/WWW-Google-UserAgent/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (C) 2014 Mohammad S Anwar.
+Copyright (C) 2014 - 2015 Mohammad S Anwar.
 
 This  program  is  free software; you can redistribute it and/or modify it under
 the  terms  of the the Artistic License (2.0). You may obtain a copy of the full

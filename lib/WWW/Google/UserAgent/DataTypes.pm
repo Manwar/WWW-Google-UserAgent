@@ -1,6 +1,17 @@
 package WWW::Google::UserAgent::DataTypes;
 
-$WWW::Google::UserAgent::DataTypes::VERSION = '0.10';
+$WWW::Google::UserAgent::DataTypes::VERSION   = '0.11';
+$WWW::Google::UserAgent::DataTypes::AUTHORITY = 'cpan:MANWAR';
+
+=head1 NAME
+
+WWW::Google::UserAgent::DataTypes - Used by the core library WWW::Google::UserAgent
+
+=head1 VERSION
+
+Version 0.11
+
+=cut
 
 use 5.006;
 use parent 'Exporter';
@@ -11,17 +22,6 @@ our @EXPORT_OK = qw(
     $TrueOrFalse
     $XmlOrJson
 );
-
-=head1 NAME
-
-WWW::Google::UserAgent::DataTypes - Used by the core library WWW::Google::UserAgent
-
-=head1 VERSION
-
-Version 0.10
-
-=cut
-
 
 our $ZeroOrOne = sub {
     my ($str) = @_;
@@ -89,7 +89,7 @@ L<http://search.cpan.org/dist/WWW-Google-UserAgent/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (C) 2014 Mohammad S Anwar.
+Copyright (C) 2014 - 2015 Mohammad S Anwar.
 
 This  program  is  free software; you can redistribute it and/or modify it under
 the  terms  of the the Artistic License (2.0). You may obtain a copy of the full

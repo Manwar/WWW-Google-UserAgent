@@ -3,10 +3,12 @@ lib/WWW/Google/UserAgent.pm
 lib/WWW/Google/UserAgent/DataTypes.pm
 lib/WWW/Google/UserAgent/Exception.pm
 Makefile.PL
+LICENSE
 MANIFEST
-SIGNATURE
 MANIFEST.SKIP
 README
 t/00-load.t
 t/manifest.t
 t/pod.t
+t/meta-yml.t
+t/meta-json.t

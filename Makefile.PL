@@ -27,6 +27,11 @@ WriteMakefile(
     clean => { FILES => 'WWW-Google-UserAgent-*' },
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
+        provides    => {
+            'WWW::Google::UserAgent' => { file => 'lib/WWW/Google/UserAgent.pm',           version => '0.11' },
+            'WWW::Google::UserAgent' => { file => 'lib/WWW/Google/UserAgent/DataTypes.pm', version => '0.11' },
+            'WWW::Google::UserAgent' => { file => 'lib/WWW/Google/UserAgent/Exception.pm', version => '0.11' },
+        },
         resources => {
             repository => {
                 type => 'git',

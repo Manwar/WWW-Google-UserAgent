@@ -1,5 +1,12 @@
 Revision history for WWW-Google-UserAgent
 
+0.11  Fri Jan 09 15:12:00 2015
+      - Updated Makefile.PL to generate the key 'provides' for META file correctly.
+      - Removed SIGNATURE file.
+      - Added unit test to test META files.
+      - Added LICENSE file.
+      - Updated Copyright year information.
+
 0.10  Thu Aug 28 02:30:00 2014
       - Added key "META_MERGE" key on condition (ExUtils::MakeMake->VERSION(6.46).
 
