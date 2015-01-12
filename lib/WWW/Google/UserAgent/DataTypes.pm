@@ -1,6 +1,6 @@
 package WWW::Google::UserAgent::DataTypes;
 
-$WWW::Google::UserAgent::DataTypes::VERSION   = '0.12';
+$WWW::Google::UserAgent::DataTypes::VERSION   = '0.13';
 $WWW::Google::UserAgent::DataTypes::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ WWW::Google::UserAgent::DataTypes - Used by the core library WWW::Google::UserAg
 
 =head1 VERSION
 
-Version 0.12
+Version 0.13
 
 =cut
 

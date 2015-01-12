@@ -1,6 +1,6 @@
 package WWW::Google::UserAgent;
 
-$WWW::Google::UserAgent::VERSION   = '0.12';
+$WWW::Google::UserAgent::VERSION   = '0.13';
 $WWW::Google::UserAgent::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ WWW::Google::UserAgent - Core library for Google API services.
 
 =head1 VERSION
 
-Version 0.12
+Version 0.13
 
 =cut
 
@@ -32,7 +32,7 @@ services.
 
 =head1 METHODS
 
-=head2 get(<url>)
+=head2 get($url)
 
 The method get() expects one parameter i.e. URL and returns the standard response.
 On error throws exception of type L<WWW::Google::UserAgent::Exception>.
@@ -42,10 +42,9 @@ On error throws exception of type L<WWW::Google::UserAgent::Exception>.
 sub get {
     my ($self, $url) = @_;
 
-    my $ua = $self->ua;
+    my $ua       = $self->ua;
     my $response = $ua->request('GET', $url);
-
-    my @caller = caller(1);
+    my @caller   = caller(1);
     @caller = caller(2) if $caller[3] eq '(eval)';
 
     unless ($response->{success}) {
@@ -61,20 +60,20 @@ sub get {
     return $response;
 }
 
-=head2 post(<url>, <headers>, <content>)
+=head2 post($url, \%headers, $content)
 
 The method post() expects three parameters i.e. URL, Headers, Content in the same
-order and returns the standard response. On error throws exception of type L<WWW::Google::UserAgent::Exception>.
+order and returns the standard response. The '$content' should be JSON formatted.
+On error throws exception of type L<WWW::Google::UserAgent::Exception>.
 
 =cut
 
 sub post {
     my ($self, $url, $headers, $content) = @_;
 
-    my $ua = $self->ua;
+    my $ua       = $self->ua;
     my $response = $ua->request('POST', $url, { headers => $headers, content => $content });
-
-    my @caller = caller(1);
+    my @caller   = caller(1);
     @caller = caller(2) if $caller[3] eq '(eval)';
 
     unless ($response->{success}) {
@@ -97,6 +96,24 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 =head1 REPOSITORY
 
 L<https://github.com/Manwar/WWW-Google-UserAgent>
+
+=head1 SEE ALSO
+
+=over 4
+
+=item * L<WWW::Google::CustomSearch>
+
+=item * L<WWW::Google::Places>
+
+=item * L<WWW::Google::APIDiscovery>
+
+=item * L<WWW::Google::DistanceMatrix>
+
+=item * L<WWW::Google::URLShortener>
+
+=item * L<WWW::Google::PageSpeedOnline>
+
+=back
 
 =head1 BUGS
 

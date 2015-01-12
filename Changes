@@ -1,5 +1,12 @@
 Revision history for WWW-Google-UserAgent
 
+0.13    Mon Jan 12 14:30:18 2015
+        - Updated method get() and post() description in the pod document.
+        - Added 'SEE ALSO' section to the pod document.
+        - Added 'use 5.006;' line to the following test scripts:
+          - t/meta-json.t
+          - t/meta-yml.t
+
 0.12  Fri Jan 09 16:40:00 2015
       - Fixed the typo in the package name of WWW::Google::UserAgent::DataTypes and
         WWW::Google::UserAgent::Exception in the 'provides' list of Makefile.PL file.
