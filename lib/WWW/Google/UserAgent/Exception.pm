@@ -1,15 +1,15 @@
 package WWW::Google::UserAgent::Exception;
 
-$WWW::Google::UserAgent::Exception::VERSION   = '0.13';
+$WWW::Google::UserAgent::Exception::VERSION   = '0.14';
 $WWW::Google::UserAgent::Exception::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
 
-WWW::Google::UserAgent::Exception - Interface to Exception class used by WWW::Google::UserAgent.
+WWW::Google::UserAgent::Exception - Interface to Exception class used by L<WWW::Google::UserAgent>.
 
 =head1 VERSION
 
-Version 0.13
+Version 0.14
 
 =cut
 
@@ -34,6 +34,10 @@ sub as_string {
                    $self->method, $self->message, $self->code,
                    $self->filename, $self->line_number);
 }
+
+=head1 DESCRIPTION
+
+B<FOR INTERNAL USE ONLY>
 
 =head1 AUTHOR
 

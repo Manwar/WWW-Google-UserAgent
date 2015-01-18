@@ -2,9 +2,7 @@
 use 5.006;
 use strict;
 use warnings FATAL => 'all';
-use Test::More;
-
-plan tests => 3;
+use Test::More tests => 3;
 
 BEGIN {
     use_ok( 'WWW::Google::UserAgent'            ) || print "Bail out!\n";

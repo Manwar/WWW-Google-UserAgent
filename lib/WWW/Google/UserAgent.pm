@@ -1,6 +1,6 @@
 package WWW::Google::UserAgent;
 
-$WWW::Google::UserAgent::VERSION   = '0.13';
+$WWW::Google::UserAgent::VERSION   = '0.14';
 $WWW::Google::UserAgent::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ WWW::Google::UserAgent - Core library for Google API services.
 
 =head1 VERSION
 
-Version 0.13
+Version 0.14
 
 =cut
 

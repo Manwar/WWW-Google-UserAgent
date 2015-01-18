@@ -19,6 +19,8 @@ WriteMakefile(
     },
     PREREQ_PM => {
         'HTTP::Tiny'       => 0,
+        'IO::Socket::SSL'  => '1.56',
+        'Net::SSLeay'      => '1.49',
         'Moo'              => 0,
         'Throwable'        => 0,
         'namespace::clean' => 0,
@@ -28,9 +30,9 @@ WriteMakefile(
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
         provides    => {
-            'WWW::Google::UserAgent'            => { file => 'lib/WWW/Google/UserAgent.pm',           version => '0.13' },
-            'WWW::Google::UserAgent::DataTypes' => { file => 'lib/WWW/Google/UserAgent/DataTypes.pm', version => '0.13' },
-            'WWW::Google::UserAgent::Exception' => { file => 'lib/WWW/Google/UserAgent/Exception.pm', version => '0.13' },
+            'WWW::Google::UserAgent'            => { file => 'lib/WWW/Google/UserAgent.pm',           version => '0.14' },
+            'WWW::Google::UserAgent::DataTypes' => { file => 'lib/WWW/Google/UserAgent/DataTypes.pm', version => '0.14' },
+            'WWW::Google::UserAgent::Exception' => { file => 'lib/WWW/Google/UserAgent/Exception.pm', version => '0.14' },
         },
         resources => {
             repository => {

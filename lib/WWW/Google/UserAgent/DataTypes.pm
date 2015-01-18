@@ -1,15 +1,15 @@
 package WWW::Google::UserAgent::DataTypes;
 
-$WWW::Google::UserAgent::DataTypes::VERSION   = '0.13';
+$WWW::Google::UserAgent::DataTypes::VERSION   = '0.14';
 $WWW::Google::UserAgent::DataTypes::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
 
-WWW::Google::UserAgent::DataTypes - Used by the core library WWW::Google::UserAgent
+WWW::Google::UserAgent::DataTypes - Used by the core library L<WWW::Google::UserAgent>.
 
 =head1 VERSION
 
-Version 0.13
+Version 0.14
 
 =cut
 
@@ -43,6 +43,10 @@ our $XmlOrJson = sub {
     die "ERROR: Invalid data found [$str]"
 	unless (defined($str) || ($str =~ m(^\bjson\b|\bxml\b$)i))
 };
+
+=head1 DESCRIPTION
+
+B<FOR INTERNAL USE ONLY>
 
 =head1 AUTHOR
 

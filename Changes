@@ -1,11 +1,19 @@
 Revision history for WWW-Google-UserAgent
 
-0.13    Mon Jan 12 14:30:18 2015
-        - Updated method get() and post() description in the pod document.
-        - Added 'SEE ALSO' section to the pod document.
-        - Added 'use 5.006;' line to the following test scripts:
-          - t/meta-json.t
-          - t/meta-yml.t
+0.14  Sun Jan 18 19:15:00 2015
+      - Updated Makefile.PL and added support of 'https' by adding dependency as below as documented:
+        - IO::Socket::SSL v1.56
+        - Net::SSLeay v1.49
+      HTTP::Tiny v0.053 document says:
+         >> Direct https connections are supported only if IO::Socket::SSL 1.56 or greater and
+         >> Net::SSLeay 1.49 or greater are installed.
+
+0.13  Mon Jan 12 14:30:18 2015
+      - Updated method get() and post() description in the pod document.
+      - Added 'SEE ALSO' section to the pod document.
+      - Added 'use 5.006;' line to the following test scripts:
+        - t/meta-json.t
+        - t/meta-yml.t
 
 0.12  Fri Jan 09 16:40:00 2015
       - Fixed the typo in the package name of WWW::Google::UserAgent::DataTypes and
@@ -48,4 +56,3 @@ Revision history for WWW-Google-UserAgent
 
 0.01  Sat Jul 19 16:31:20 2014
       - First version, released.
-
