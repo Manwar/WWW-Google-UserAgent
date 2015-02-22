@@ -1,15 +1,15 @@
 package WWW::Google::UserAgent;
 
-$WWW::Google::UserAgent::VERSION   = '0.15';
+$WWW::Google::UserAgent::VERSION   = '0.16';
 $WWW::Google::UserAgent::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
 
-WWW::Google::UserAgent - Useragent library for Google API services.
+WWW::Google::UserAgent - Low-level HTTP request handler for Google API.
 
 =head1 VERSION
 
-Version 0.15
+Version 0.16
 
 =cut
 
