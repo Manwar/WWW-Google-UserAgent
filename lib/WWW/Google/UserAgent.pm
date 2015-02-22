@@ -1,15 +1,15 @@
 package WWW::Google::UserAgent;
 
-$WWW::Google::UserAgent::VERSION   = '0.14';
+$WWW::Google::UserAgent::VERSION   = '0.15';
 $WWW::Google::UserAgent::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
 
-WWW::Google::UserAgent - Core library for Google API services.
+WWW::Google::UserAgent - Useragent library for Google API services.
 
 =head1 VERSION
 
-Version 0.14
+Version 0.15
 
 =cut
 
@@ -27,15 +27,14 @@ has 'ua'      => ( is => 'rw', default => sub { HTTP::Tiny->new(agent => "WWW-Go
 
 =head1 DESCRIPTION
 
-The L<WWW::Google::UserAgent> module is  part of the core library  for Google API
-services.
+It provides common useragent library for Google API services.
 
 =head1 METHODS
 
 =head2 get($url)
 
-The method get() expects one parameter i.e. URL and returns the standard response.
-On error throws exception of type L<WWW::Google::UserAgent::Exception>.
+It  expects  one parameter i.e.  URL  and returns the standard response. On error
+throws exception of type L<WWW::Google::UserAgent::Exception>.
 
 =cut
 
@@ -62,9 +61,9 @@ sub get {
 
 =head2 post($url, \%headers, $content)
 
-The method post() expects three parameters i.e. URL, Headers, Content in the same
-order and returns the standard response. The '$content' should be JSON formatted.
-On error throws exception of type L<WWW::Google::UserAgent::Exception>.
+It expects  three  parameters i.e. URL, Headers and Content in the same order and
+returns the standard response. The c<$content> should be JSON formatted. On error
+throws exception of type L<WWW::Google::UserAgent::Exception>.
 
 =cut
 
@@ -154,8 +153,8 @@ L<http://search.cpan.org/dist/WWW-Google-UserAgent/>
 
 Copyright (C) 2014 - 2015 Mohammad S Anwar.
 
-This  program  is  free software; you can redistribute it and/or modify it under
-the  terms  of the the Artistic License (2.0). You may obtain a copy of the full
+This  program  is  free software;  you can redistribute it and/or modify it under
+the  terms  of the the Artistic  License (2.0). You may obtain a copy of the full
 license at:
 
 L<http://www.perlfoundation.org/artistic_license_2_0>

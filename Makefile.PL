@@ -1,3 +1,5 @@
+#!/usr/bin/perl
+
 use 5.006;
 use strict;
 use warnings FATAL => 'all';
@@ -14,7 +16,7 @@ WriteMakefile(
     CONFIGURE_REQUIRES => {
         'ExtUtils::MakeMaker' => 0,
     },
-    BUILD_REQUIRES => {
+    BUILD_REQUIRES   => {
         'Test::More' => 0,
     },
     PREREQ_PM => {
@@ -30,9 +32,9 @@ WriteMakefile(
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
         provides    => {
-            'WWW::Google::UserAgent'            => { file => 'lib/WWW/Google/UserAgent.pm',           version => '0.14' },
-            'WWW::Google::UserAgent::DataTypes' => { file => 'lib/WWW/Google/UserAgent/DataTypes.pm', version => '0.14' },
-            'WWW::Google::UserAgent::Exception' => { file => 'lib/WWW/Google/UserAgent/Exception.pm', version => '0.14' },
+            'WWW::Google::UserAgent'            => { file => 'lib/WWW/Google/UserAgent.pm',           version => '0.15' },
+            'WWW::Google::UserAgent::DataTypes' => { file => 'lib/WWW/Google/UserAgent/DataTypes.pm', version => '0.15' },
+            'WWW::Google::UserAgent::Exception' => { file => 'lib/WWW/Google/UserAgent/Exception.pm', version => '0.15' },
         },
         resources => {
             repository => {

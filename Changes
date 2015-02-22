@@ -1,5 +1,8 @@
 Revision history for WWW-Google-UserAgent
 
+0.15  Sun Feb 22 09:50:00 2015
+      - Tidied up pod document.
+
 0.14  Sun Jan 18 19:15:00 2015
       - Updated Makefile.PL and added support of 'https' by adding dependency as below as documented:
         - IO::Socket::SSL v1.56

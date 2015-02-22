@@ -1,15 +1,15 @@
 package WWW::Google::UserAgent::DataTypes;
 
-$WWW::Google::UserAgent::DataTypes::VERSION   = '0.14';
+$WWW::Google::UserAgent::DataTypes::VERSION   = '0.15';
 $WWW::Google::UserAgent::DataTypes::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
 
-WWW::Google::UserAgent::DataTypes - Used by the core library L<WWW::Google::UserAgent>.
+WWW::Google::UserAgent::DataTypes - Commonly used data types by Google APIs.
 
 =head1 VERSION
 
-Version 0.14
+Version 0.15
 
 =cut
 
@@ -95,8 +95,8 @@ L<http://search.cpan.org/dist/WWW-Google-UserAgent/>
 
 Copyright (C) 2014 - 2015 Mohammad S Anwar.
 
-This  program  is  free software; you can redistribute it and/or modify it under
-the  terms  of the the Artistic License (2.0). You may obtain a copy of the full
+This  program  is  free software; you can redistribute it and/or  modify it under
+the  terms  of the the Artistic License (2.0). You may  obtain a copy of the full
 license at:
 
 L<http://www.perlfoundation.org/artistic_license_2_0>
