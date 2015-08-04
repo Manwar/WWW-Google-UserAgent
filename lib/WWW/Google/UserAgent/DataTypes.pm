@@ -1,6 +1,6 @@
 package WWW::Google::UserAgent::DataTypes;
 
-$WWW::Google::UserAgent::DataTypes::VERSION   = '0.16';
+$WWW::Google::UserAgent::DataTypes::VERSION   = '0.17';
 $WWW::Google::UserAgent::DataTypes::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,40 +9,49 @@ WWW::Google::UserAgent::DataTypes - Commonly used data types for Google API.
 
 =head1 VERSION
 
-Version 0.16
+Version 0.17
 
 =cut
 
 use 5.006;
-use parent 'Exporter';
 use strict; use warnings;
 
-our @EXPORT_OK = qw(
-    $ZeroOrOne
-    $TrueOrFalse
-    $XmlOrJson
-);
+use Data::Dumper;
+use Type::Library -base;
+use Type::Utils -all;
 
-our $ZeroOrOne = sub {
-    my ($str) = @_;
+BEGIN { extends "Types::Standard" };
 
-    die "ERROR: Invalid data found [$str]"
-	unless (defined($str) && ($str == 0 || $str == 1));
+my $LANGUAGES = {
+    'ar' => 1, 'eu' => 1, 'bg'    => 1, 'bn'    => 1, 'ca'    => 1, 'cs'    => 1, 'da'    => 1, 'de' => 1,
+    'el' => 1, 'en' => 1, 'en-au' => 1, 'en-gb' => 1, 'es'    => 1, 'eu'    => 1, 'fa'    => 1, 'fi' => 1,
+    'fi' => 1, 'fr' => 1, 'gl'    => 1, 'gu'    => 1, 'hi'    => 1, 'hr'    => 1, 'hu'    => 1, 'id' => 1,
+    'it' => 1, 'iw' => 1, 'ja'    => 1, 'kn'    => 1, 'ko'    => 1, 'lt'    => 1, 'lv'    => 1, 'ml' => 1,
+    'mr' => 1, 'nl' => 1, 'no'    => 1, 'pl'    => 1, 'pt'    => 1, 'pt-br' => 1, 'pt-pt' => 1, 'ro' => 1,
+    'ru' => 1, 'sk' => 1, 'sl'    => 1, 'sr'    => 1, 'sv'    => 1, 'tl'    => 1, 'ta'    => 1, 'te' => 1,
+    'th' => 1, 'tr' => 1, 'uk'    => 1, 'vi'    => 1, 'zh-cn' => 1, 'zh-tw' => 1 };
+
+my $LOCALES = {
+    'ar'    => 'Arabic',                'bg'    => 'Bulgarian', 'ca'    => 'Catalan',    'zh_tw' => 'Traditional Chinese (Taiwan)',
+    'zh_cn' => 'Simplified Chinese',    'fr'    => 'Croatian',  'cs'    => 'Czech',      'da'    => 'Danish',
+    'nl'    => 'Dutch',                 'en_us' => 'English',   'en_gb' => 'English UK', 'fil'   => 'Filipino',
+    'fi'    => 'Finnish',               'fr'    => 'French',    'de'    => 'German',     'el'    => 'Greek',
+    'lw'    => 'Hebrew',                'hi'    => 'Hindi',     'hu'    => 'Hungarian',  'id'    => 'Indonesian',
+    'it'    => 'Italian',               'ja'    => 'Japanese',  'ko'    => 'Korean',     'lv'    => 'Latvian',
+    'lt'    => 'Lithuanian',            'no'    => 'Norwegian', 'pl'    => 'Polish',     'pr_br' => 'Portuguese (Brazilian)',
+    'pt_pt' => 'Portuguese (Portugal)', 'ro'    => 'Romanian',  'ru'    => 'Russian',    'sr'    => 'Serbian',
+    'sk'    => 'Slovakian',             'sl'    => 'Slovenian', 'es'    => 'Spanish',    'sv'    => 'Swedish',
+    'th'    => 'Thai',                  'tr'    => 'Turkish',   'uk'    => 'Ukrainian',  'vi'    => 'Vietnamese',
 };
 
-our $TrueOrFalse = sub {
-    my ($str) = @_;
-
-    die "ERROR: Invalid data found [$str]"
-	unless (defined($str) && ($str =~ m(^\btrue\b|\bfalse\b$)i));
-};
-
-our $XmlOrJson = sub {
-    my ($str) = @_;
-
-    die "ERROR: Invalid data found [$str]"
-	unless (defined($str) || ($str =~ m(^\bjson\b|\bxml\b$)i))
-};
+declare "Language",  as Str, where { (!defined($_) || (exists $LANGUAGES->{lc($_)}))         };
+declare "Locale",    as Str, where { (!defined($_) || (exists $LOCALES->{lc($_)}))           };
+declare "Strategy",  as Str, where { (!defined($_) || ($_ =~ m(^\bdesktop\b|\bmobile\b$)i))  };
+declare "FileType",  as Str, where { (!defined($_) || ($_ =~ m(^\bjson\b|\bxml\b$)i))        };
+declare "TrueFalse", as Str, where { (!defined($_) || ($_ =~ m(^\btrue\b|\bfalse\b$)i))      };
+declare "Unit",      as Str, where { (!defined($_) || ($_ =~ m(^\bmetric\b|\bimperial\b$)i)) };
+declare "Avoid",     as Str, where { (!defined($_) || ($_ =~ m(^\btolls\b|\bhighways\b$)i))  };
+declare "Mode",      as Str, where { (!defined($_) || ($_ =~ m(^\bdriving\b|\bwalking\b|\bbicycling\b$)i)) };
 
 =head1 DESCRIPTION
 

@@ -20,21 +20,24 @@ WriteMakefile(
         'Test::More' => 0,
     },
     PREREQ_PM => {
-        'HTTP::Tiny'       => 0,
+        'Moo'              => '2.000000',
+        'namespace::clean' => '0.24',
+        'HTTP::Tiny'       => '0.043',
         'IO::Socket::SSL'  => '1.56',
         'Net::SSLeay'      => '1.49',
-        'Moo'              => 0,
-        'Throwable'        => 0,
-        'namespace::clean' => 0,
+        'Throwable'        => '0.200011',
+        'Type::Library'    => '1.000005',
+        'Type::Utils'      => '1.000005',
+        'Types::Standard'  => '1.000005',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'WWW-Google-UserAgent-*' },
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
         provides    => {
-            'WWW::Google::UserAgent'            => { file => 'lib/WWW/Google/UserAgent.pm',           version => '0.16' },
-            'WWW::Google::UserAgent::DataTypes' => { file => 'lib/WWW/Google/UserAgent/DataTypes.pm', version => '0.16' },
-            'WWW::Google::UserAgent::Exception' => { file => 'lib/WWW/Google/UserAgent/Exception.pm', version => '0.16' },
+            'WWW::Google::UserAgent'            => { file => 'lib/WWW/Google/UserAgent.pm',           version => '0.17' },
+            'WWW::Google::UserAgent::DataTypes' => { file => 'lib/WWW/Google/UserAgent/DataTypes.pm', version => '0.17' },
+            'WWW::Google::UserAgent::Exception' => { file => 'lib/WWW/Google/UserAgent/Exception.pm', version => '0.17' },
         },
         resources => {
             repository => {
