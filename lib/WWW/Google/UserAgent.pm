@@ -1,6 +1,6 @@
 package WWW::Google::UserAgent;
 
-$WWW::Google::UserAgent::VERSION   = '0.17';
+$WWW::Google::UserAgent::VERSION   = '0.18';
 $WWW::Google::UserAgent::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ WWW::Google::UserAgent - Low-level HTTP request handler for Google API.
 
 =head1 VERSION
 
-Version 0.17
+Version 0.18
 
 =cut
 
@@ -49,9 +49,8 @@ sub get {
     unless ($response->{success}) {
 	WWW::Google::UserAgent::Exception->throw({
             method      => $caller[3],
-            message     => "request to API failed",
             code        => $response->{status},
-            reason      => $response->{reason},
+            message     => $response->{reason},
             filename    => $caller[1],
             line_number => $caller[2] });
     }
@@ -78,9 +77,8 @@ sub post {
     unless ($response->{success}) {
         WWW::Google::UserAgent::Exception->throw({
             method      => $caller[3],
-            message     => "request to API failed",
             code        => $response->{status},
-            reason      => $response->{reason},
+            message     => $response->{reason},
             filename    => $caller[1],
             line_number => $caller[2] });
     }

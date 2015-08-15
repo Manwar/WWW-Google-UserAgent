@@ -1,5 +1,9 @@
 Revision history for WWW-Google-UserAgent
 
+0.18  Sat Aug 15 08:45:00 2015
+      - Removed unused attribute 'reason' from package WWW::Google::UserAgent::Exception.
+      - Updated package WWW::Google::UserAgent to reflect the above changes.
+
 0.17  Tue Aug 04 12:00:00 2015
       - Re-structured package WWW::Google::UserAgent::DataTypes to be a library of
       Google API commonly used data types.

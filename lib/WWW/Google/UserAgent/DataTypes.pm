@@ -1,6 +1,6 @@
 package WWW::Google::UserAgent::DataTypes;
 
-$WWW::Google::UserAgent::DataTypes::VERSION   = '0.17';
+$WWW::Google::UserAgent::DataTypes::VERSION   = '0.18';
 $WWW::Google::UserAgent::DataTypes::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ WWW::Google::UserAgent::DataTypes - Commonly used data types for Google API.
 
 =head1 VERSION
 
-Version 0.17
+Version 0.18
 
 =cut
 
