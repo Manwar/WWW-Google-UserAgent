@@ -1,6 +1,6 @@
 package WWW::Google::UserAgent::Exception;
 
-$WWW::Google::UserAgent::Exception::VERSION   = '0.18';
+$WWW::Google::UserAgent::Exception::VERSION   = '0.19';
 $WWW::Google::UserAgent::Exception::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ WWW::Google::UserAgent::Exception - Interface to exception class for Google API.
 
 =head1 VERSION
 
-Version 0.18
+Version 0.19
 
 =cut
 

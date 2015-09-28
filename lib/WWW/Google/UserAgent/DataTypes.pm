@@ -1,6 +1,6 @@
 package WWW::Google::UserAgent::DataTypes;
 
-$WWW::Google::UserAgent::DataTypes::VERSION   = '0.18';
+$WWW::Google::UserAgent::DataTypes::VERSION   = '0.19';
 $WWW::Google::UserAgent::DataTypes::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ WWW::Google::UserAgent::DataTypes - Commonly used data types for Google API.
 
 =head1 VERSION
 
-Version 0.18
+Version 0.19
 
 =cut
 
@@ -17,10 +17,9 @@ use 5.006;
 use strict; use warnings;
 
 use Data::Dumper;
-use Type::Library -base;
+use base qw(Type::Library);
 use Type::Utils -all;
-
-BEGIN { extends "Types::Standard" };
+use Types::Standard qw(:all);
 
 my $LANGUAGES = {
     'ar' => 1, 'eu' => 1, 'bg'    => 1, 'bn'    => 1, 'ca'    => 1, 'cs'    => 1, 'da'    => 1, 'de' => 1,
