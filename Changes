@@ -1,5 +1,8 @@
 Revision history for WWW-Google-UserAgent
 
+0.20  Sat Oct 03 06:10:00 2015
+      - Updated Makefile.PL to have Type::Tiny as pre-requisite.
+
 0.19  Mon Sep 28 14:25:00 2015
       - Fixed the way Type::Library, Type::Utils and Types::Standard was imported in the
         package WWW::Google::UserAgent::DataType as it was conflicting with the package

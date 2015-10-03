@@ -26,18 +26,16 @@ WriteMakefile(
         'IO::Socket::SSL'  => '1.56',
         'Net::SSLeay'      => '1.49',
         'Throwable'        => '0.200011',
-        'Type::Library'    => '1.000005',
-        'Type::Utils'      => '1.000005',
-        'Types::Standard'  => '1.000005',
+        'Type::Tiny'       => '1.000005',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'WWW-Google-UserAgent-*' },
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
         provides    => {
-            'WWW::Google::UserAgent'            => { file => 'lib/WWW/Google/UserAgent.pm',           version => '0.19' },
-            'WWW::Google::UserAgent::DataTypes' => { file => 'lib/WWW/Google/UserAgent/DataTypes.pm', version => '0.19' },
-            'WWW::Google::UserAgent::Exception' => { file => 'lib/WWW/Google/UserAgent/Exception.pm', version => '0.19' },
+            'WWW::Google::UserAgent'            => { file => 'lib/WWW/Google/UserAgent.pm',           version => '0.20' },
+            'WWW::Google::UserAgent::DataTypes' => { file => 'lib/WWW/Google/UserAgent/DataTypes.pm', version => '0.20' },
+            'WWW::Google::UserAgent::Exception' => { file => 'lib/WWW/Google/UserAgent/Exception.pm', version => '0.20' },
         },
         resources => {
             repository => {
